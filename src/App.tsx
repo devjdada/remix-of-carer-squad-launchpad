@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 import { AdminLayout } from "./components/admin/AdminLayout";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminStudents from "./pages/admin/AdminStudents";
+import AdminStudentDetails from "./pages/admin/AdminStudentDetails";
 import AdminTestimonials from "./pages/admin/AdminTestimonials";
 import AdminPartners from "./pages/admin/AdminPartners";
 import AdminProgrammes from "./pages/admin/AdminProgrammes";
@@ -43,6 +44,7 @@ const App = () => <QueryClientProvider client={queryClient}>
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
             <Route path="students" element={<AdminStudents />} />
+            <Route path="students/:id" element={<AdminStudentDetails />} />
             <Route path="testimonials" element={<AdminTestimonials />} />
             <Route path="partners" element={<AdminPartners />} />
             <Route path="programmes" element={<AdminProgrammes />} />
