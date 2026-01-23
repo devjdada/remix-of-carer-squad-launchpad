@@ -13,6 +13,15 @@ import Partners from "./pages/Partners";
 import Mission from "./pages/Mission";
 import AdmissionStatus from "./pages/AdmissionStatus";
 import NotFound from "./pages/NotFound";
+
+// Admin imports
+import { AdminLayout } from "./components/admin/AdminLayout";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminStudents from "./pages/admin/AdminStudents";
+import AdminTestimonials from "./pages/admin/AdminTestimonials";
+import AdminPartners from "./pages/admin/AdminPartners";
+import AdminProgrammes from "./pages/admin/AdminProgrammes";
+
 const queryClient = new QueryClient();
 const App = () => <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -29,6 +38,16 @@ const App = () => <QueryClientProvider client={queryClient}>
           <Route path="/partners" element={<Partners />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/admission-status" element={<AdmissionStatus />} />
+          
+          {/* Admin Routes */}
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="students" element={<AdminStudents />} />
+            <Route path="testimonials" element={<AdminTestimonials />} />
+            <Route path="partners" element={<AdminPartners />} />
+            <Route path="programmes" element={<AdminProgrammes />} />
+          </Route>
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
