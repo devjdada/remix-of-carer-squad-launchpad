@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* CARER SQUAD Design System - Gen-Z Modern Theme */
+    
+    /* Base Colors */
+    --background: 0 0% 98%; /* White Smoke */
+    --foreground: 210 15% 20%; /* Graphite */
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 20%;
+
+    /* Brand Colors */
+    --primary: 220 60% 25%; /* Navy Blue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 90% 55%; /* Sky Blue */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 75 80% 55%; /* Lime Green */
+    --accent-foreground: 210 15% 20%;
+
+    --muted: 210 20% 95%;
+    --muted-foreground: 210 15% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 94%;
+    --ring: 200 90% 55%;
+
+    --radius: 1rem; /* Round edges for Gen-Z aesthetic */
+
+    /* Custom Brand Tokens */
+    --navy: 220 60% 25%;
+    --sky: 200 90% 55%;
+    --lime: 75 80% 55%;
+    --graphite: 210 15% 20%;
+    --smoke: 0 0% 98%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 60% 25%) 0%, hsl(220 50% 35%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(200 90% 55%) 0%, hsl(75 80% 55%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 99%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(220 60% 25% / 0.08);
+    --shadow-medium: 0 8px 30px -4px hsl(220 60% 25% / 0.12);
+    --shadow-glow: 0 0 30px hsl(75 80% 55% / 0.3);
+    --shadow-glow-blue: 0 0 30px hsl(200 90% 55% / 0.3);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 60% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 50% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 50% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 220 60% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 90% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 75 80% 55%;
+    --accent-foreground: 220 60% 8%;
+
+    --muted: 220 40% 15%;
+    --muted-foreground: 210 15% 65%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 40% 20%;
+    --input: 220 40% 15%;
+    --ring: 200 90% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h3 {
+    @apply text-3xl md:text-4xl;
+  }
+}
+
+@layer utilities {
+  /* Animation Classes */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out;
+  }
+
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+  }
+
+  .hover-glow {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .text-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
