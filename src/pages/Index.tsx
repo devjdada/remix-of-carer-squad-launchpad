@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 import hairdressingBg from "@/assets/hairdressing-bg.jpg";
 import {
-  Scissors, 
-  Sparkles, 
+  Scissors,
+  Sparkles,
   ChefHat,
   ArrowRight,
   CheckCircle
@@ -81,8 +81,8 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {highlights.map((highlight, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="flex items-start space-x-3 p-4 rounded-xl bg-muted/50 hover:bg-muted transition-colors animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -171,9 +171,9 @@ const Index = () => {
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="bg-background/10 text-primary-foreground border-primary-foreground/30 hover:bg-background/20 text-lg px-8 py-6"
                 >
                   Contact Us
@@ -189,9 +189,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <img 
-                src={logo} 
-                alt="Carer Squad Logo" 
+              <img
+                src={logo}
+                alt="Carer Squad Logo"
                 className="h-20 w-auto mb-4 brightness-0 invert drop-shadow-lg"
               />
               <p className="text-sm opacity-80">
@@ -219,6 +219,8 @@ const Index = () => {
               <ul className="space-y-2 text-sm opacity-80">
                 <li><Link to="/registration" className="hover:text-lime transition-colors">Apply Now</Link></li>
                 <li><Link to="/contact" className="hover:text-lime transition-colors">Contact Us</Link></li>
+                <li><Link to="/admin/login" className="hover:text-lime transition-colors">Admin Login</Link></li>
+                <li><Link to="/admin/register" className="hover:text-lime transition-colors">Admin Register</Link></li>
               </ul>
             </div>
           </div>

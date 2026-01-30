@@ -22,38 +22,44 @@ import AdminStudentDetails from "./pages/admin/AdminStudentDetails";
 import AdminTestimonials from "./pages/admin/AdminTestimonials";
 import AdminPartners from "./pages/admin/AdminPartners";
 import AdminProgrammes from "./pages/admin/AdminProgrammes";
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminRegister from "./pages/admin/AdminRegister";
 
 const queryClient = new QueryClient();
 const App = () => <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/programmes" element={<Programmes />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/registration" element={<Registration />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/partners" element={<Partners />} />
-          <Route path="/mission" element={<Mission />} />
-          <Route path="/admission-status" element={<AdmissionStatus />} />
-          
-          {/* Admin Routes */}
-          <Route path="/admin" element={<AdminLayout />}>
-            <Route index element={<AdminDashboard />} />
-            <Route path="students" element={<AdminStudents />} />
-            <Route path="students/:id" element={<AdminStudentDetails />} />
-            <Route path="testimonials" element={<AdminTestimonials />} />
-            <Route path="partners" element={<AdminPartners />} />
-            <Route path="programmes" element={<AdminProgrammes />} />
-          </Route>
-          
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>;
+  <TooltipProvider>
+    <Toaster />
+    <Sonner />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/programmes" element={<Programmes />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/partners" element={<Partners />} />
+        <Route path="/mission" element={<Mission />} />
+        <Route path="/admission-status" element={<AdmissionStatus />} />
+
+        {/* Admin Auth Routes */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/register" element={<AdminRegister />} />
+
+        {/* Admin Routes */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="students" element={<AdminStudents />} />
+          <Route path="students/:id" element={<AdminStudentDetails />} />
+          <Route path="testimonials" element={<AdminTestimonials />} />
+          <Route path="partners" element={<AdminPartners />} />
+          <Route path="programmes" element={<AdminProgrammes />} />
+        </Route>
+
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  </TooltipProvider>
+</QueryClientProvider>;
 export default App;
